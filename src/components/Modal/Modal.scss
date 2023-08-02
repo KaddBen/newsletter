@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import '../../partials/color';
+@import '../../partials/mixin';
+
+
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: $formColor;
+}
+
+body {
+  background-color: $backgroundColor;
+}
+
+.modal {
+ @include modal-mobile(flex-end,column-reverse,100vh);
+  }
+  
+  .img_modal {
+    width: 100% ;
+    height: 310px;
+    background-image: url(../../images/illustration-sign-up-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 0 1rem 1rem;
+  }
+
+.hidden {
+  visibility: hidden;
+}
+  @media screen and (min-width: 990px) {
+
+   .modal {
+    @include modal-desktop(900px,630px,1rem);
+    flex-direction: row;
+    gap: 5%;
+    max-width: 2000px;
+   }
+
+.img_modal {
+    width: 45% ;
+    height: 100%;
+    background-image: url(../../images/illustration-sign-up-desktop.svg);
+    border-radius: 1rem;
+  }  
+  }
+

@@ -1,0 +1,59 @@
+@import "../../partials/color";
+@import "../../partials/fonts";
+@import "../../partials/mixin";
+
+.title_form {
+  font-weight: $primary-font-weight;
+  font-size: $title-primary-font;
+}
+.mail_form {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 7%;
+}
+.advantage_list {
+  padding: unset;
+  list-style: none;
+  margin-top: 1.5rem;
+  &_item {
+    display: flex;
+    margin-bottom: 1rem;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+.email {
+  &_address {
+    font-size: $secondary-font ;
+    font-weight: $primary-font-weight;
+  }
+  &_input {
+    @include max-width;
+    border: 1px solid $emailColor;
+    width: 100%;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+.subscribe_button {
+  @include max-width;
+  @include button;
+  cursor: pointer;
+  &:hover {
+   background-image: linear-gradient(to right, $hoverColor 20%, $errorColor 70%);
+  }
+}
+
+@media screen and (min-width: 990px) {
+.mail_form {
+      padding: unset;
+      width: 50%;
+      margin-left: 1.5rem;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+    }
+.title_form {
+      font-size: $title-secondary-font;
+    }
+}

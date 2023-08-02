@@ -1,0 +1,45 @@
+@import "../../partials/color";
+@import "../../partials/fonts";
+@import "../../partials/mixin";
+
+.subscribed {
+  @include modal-mobile(center, column,100vh);
+  padding: 9rem 1.5rem 2rem 1.5rem;
+}
+.icon_success {
+  width: 60px;
+}
+.dismiss_button {
+  @include max-width;
+  @include button;
+  position: absolute;
+  width: 86.5%;
+  bottom: 0;
+  cursor: pointer;
+  &:hover {
+    background-image: linear-gradient(
+      to right,
+      $hoverColor 20%,
+      $errorColor 70%
+    );
+  }
+}
+.title_subscribed {
+  font-weight: $primary-font-weight;
+  font-size: $title-primary-font;
+}
+.confirmation_message {
+  margin: unset;
+}
+@media screen and (min-width: 500px) {
+  .subscribed {
+    @include modal-desktop(530px,480px,3rem 4rem 0rem 4rem);
+  }
+  .title_subscribed {
+    font-size: $subscribed-font;
+  }
+  .dismiss_button {
+    position: unset;
+    width: 100%;
+  }
+}

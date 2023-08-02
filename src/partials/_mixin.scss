@@ -1,0 +1,40 @@
+@mixin block($font-weight) {
+    display: block !important;
+    color: $errorColor;
+    font-weight:$font-weight;
+  }
+@mixin max-width {
+  max-width: 450px;
+  min-height: 60px;
+  border-radius: 0.5rem;
+  padding-left: 1.6rem;
+  }
+@mixin button {
+    background-color: $formColor;
+    margin-block: 1.7rem;
+    border: 0;
+    text-align: center;
+    color: $modalBgColor;
+    font-weight: $primary-font-weight;
+  }
+@mixin modal-mobile($justify,$direction,$height) {
+    position: relative;
+    display: flex;
+    justify-content: $justify;
+    flex-direction: $direction;
+    width: 100%;
+    height: $height;
+    min-height: 640px; 
+    background-color: $modalBgColor;
+  }
+@mixin modal-desktop($width,$height,$padding) {
+    position: absolute;
+    min-height:unset;
+    width: $width;
+    height: $height;
+    border-radius: 2rem;
+    padding: $padding;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
